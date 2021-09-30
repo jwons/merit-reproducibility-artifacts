@@ -1,0 +1,208 @@
+Model, EqualEval, Diff, Dataset, Note
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T19:59:34.986233939Z"",
+          ""reproduced"" : ""2021-09-30T19:59:35.262381880Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T19:59:35.136972535Z"",
+    ""reproduced"" : ""2021-09-30T19:59:35.275839618Z""
+  }
+}",Irises,
+org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
+          ""reproduced"" : ""2021-09-30T19:59:36.328678344Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T19:59:36.324000311Z"",
+    ""reproduced"" : ""2021-09-30T19:59:36.376971418Z""
+  }
+}",Wine Quality,LinearDecaySGD
+org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
+          ""reproduced"" : ""2021-09-30T19:59:36.451443112Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T19:59:36.446017893Z"",
+    ""reproduced"" : ""2021-09-30T19:59:36.512277536Z""
+  }
+}",Wine Quality,AdaGrad
+org.tribuo.common.tree.TreeModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
+          ""reproduced"" : ""2021-09-30T19:59:36.598192844Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T19:59:36.595068868Z"",
+    ""reproduced"" : ""2021-09-30T19:59:36.645365369Z""
+  }
+}",Wine Quality,
+org.tribuo.transform.TransformedModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T19:59:46.905655937Z"",
+          ""reproduced"" : ""2021-09-30T20:00:03.844945561Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T19:59:57.230763330Z"",
+    ""reproduced"" : ""2021-09-30T20:00:13.495000314Z""
+  }
+}",MNIST,
+org.tribuo.transform.TransformedModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource"" : {
+        ""source"" : {
+          ""datasource-creation-time"" : {
+            ""original"" : ""2021-09-30T20:00:21.091311946Z"",
+            ""reproduced"" : ""2021-09-30T20:00:35.438849910Z""
+          }
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:28.595063550Z"",
+    ""reproduced"" : ""2021-09-30T20:00:42.412851943Z""
+  }
+}",MNIST,With TrainTestSplitter
+org.tribuo.clustering.kmeans.KMeansModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:45.910912995Z"",
+    ""reproduced"" : ""2021-09-30T20:00:45.950078160Z""
+  }
+}",Generated,
+org.tribuo.clustering.kmeans.KMeansModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:46.111277075Z"",
+    ""reproduced"" : ""2021-09-30T20:00:46.148193982Z""
+  }
+}",Generated,KMeans++
+org.tribuo.common.libsvm.LibSVMModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:49.431435438Z"",
+    ""reproduced"" : ""2021-09-30T20:00:49.563571014Z""
+  }
+}",Generated,
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T20:00:53.431753011Z"",
+          ""reproduced"" : ""2021-09-30T20:00:53.669238496Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:53.577987294Z"",
+    ""reproduced"" : ""2021-09-30T20:00:53.673436922Z""
+  }
+}",Generated,CSV Columnar with TrainTest
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T20:00:53.422754937Z"",
+          ""reproduced"" : ""2021-09-30T20:00:53.695971928Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:00:53.604073457Z"",
+    ""reproduced"" : ""2021-09-30T20:00:53.702274780Z""
+  }
+}",Generated,JSON Columnar with TrainTest
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-09-30T20:00:57.407486579Z"",
+        ""reproduced"" : ""2021-09-30T20:01:11.973489948Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:01:11.934622015Z"",
+    ""reproduced"" : ""2021-09-30T20:01:23.756102721Z""
+  }
+}",20 News,BoW Simple Logistic
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-09-30T20:01:24.771421440Z"",
+        ""reproduced"" : ""2021-09-30T20:01:39.024645327Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:01:38.947181494Z"",
+    ""reproduced"" : ""2021-09-30T20:01:50.299737978Z""
+  }
+}",20 News,Unigram Logistic
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-09-30T20:01:51.308551454Z"",
+        ""reproduced"" : ""2021-09-30T20:02:42.712436035Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:02:42.675477215Z"",
+    ""reproduced"" : ""2021-09-30T20:03:25.881358710Z""
+  }
+}",20 News,Bigram Logistic
+org.tribuo.ensemble.WeightedEnsembleModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-09-30T20:03:27.954962152Z"",
+          ""reproduced"" : ""2021-09-30T20:03:28.509002633Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-09-30T20:03:28.440849919Z"",
+    ""reproduced"" : ""2021-09-30T20:03:28.732126093Z""
+  }
+}",Wine Quality,Random Forest Trainer
+
