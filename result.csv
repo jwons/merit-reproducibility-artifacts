@@ -1,208 +1,208 @@
-Model, EqualEval, Diff, Dataset, Note
+Model, EqualEval, Diff, Dataset Name, Datasource, Note
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T19:59:34.986233939Z"",
-          ""reproduced"" : ""2021-09-30T19:59:35.262381880Z""
+          ""original"" : ""2021-09-30T22:40:36.359273295Z"",
+          ""reproduced"" : ""2021-09-30T22:40:36.630862032Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T19:59:35.136972535Z"",
-    ""reproduced"" : ""2021-09-30T19:59:35.275839618Z""
+    ""original"" : ""2021-09-30T22:40:36.515986830Z"",
+    ""reproduced"" : ""2021-09-30T22:40:36.642345290Z""
   }
-}",Irises,
+}",Irises,CSV*,
 org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
-          ""reproduced"" : ""2021-09-30T19:59:36.328678344Z""
+          ""original"" : ""2021-09-30T22:40:37.356763017Z"",
+          ""reproduced"" : ""2021-09-30T22:40:37.656076869Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T19:59:36.324000311Z"",
-    ""reproduced"" : ""2021-09-30T19:59:36.376971418Z""
+    ""original"" : ""2021-09-30T22:40:37.651916476Z"",
+    ""reproduced"" : ""2021-09-30T22:40:37.708085038Z""
   }
-}",Wine Quality,LinearDecaySGD
+}",Wine Quality,CSV*,LinearDecaySGD
 org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
-          ""reproduced"" : ""2021-09-30T19:59:36.451443112Z""
+          ""original"" : ""2021-09-30T22:40:37.356763017Z"",
+          ""reproduced"" : ""2021-09-30T22:40:37.757798651Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T19:59:36.446017893Z"",
-    ""reproduced"" : ""2021-09-30T19:59:36.512277536Z""
+    ""original"" : ""2021-09-30T22:40:37.753825308Z"",
+    ""reproduced"" : ""2021-09-30T22:40:37.809508539Z""
   }
-}",Wine Quality,AdaGrad
+}",Wine Quality,CSV*,AdaGrad
 org.tribuo.common.tree.TreeModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T19:59:36.053302264Z"",
-          ""reproduced"" : ""2021-09-30T19:59:36.598192844Z""
+          ""original"" : ""2021-09-30T22:40:37.356763017Z"",
+          ""reproduced"" : ""2021-09-30T22:40:37.904280367Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T19:59:36.595068868Z"",
-    ""reproduced"" : ""2021-09-30T19:59:36.645365369Z""
+    ""original"" : ""2021-09-30T22:40:37.900828790Z"",
+    ""reproduced"" : ""2021-09-30T22:40:37.955436426Z""
   }
-}",Wine Quality,
+}",Wine Quality,CSV*,
 org.tribuo.transform.TransformedModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T19:59:46.905655937Z"",
-          ""reproduced"" : ""2021-09-30T20:00:03.844945561Z""
+          ""original"" : ""2021-09-30T22:40:48.126275830Z"",
+          ""reproduced"" : ""2021-09-30T22:41:05.199753241Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T19:59:57.230763330Z"",
-    ""reproduced"" : ""2021-09-30T20:00:13.495000314Z""
+    ""original"" : ""2021-09-30T22:40:58.101151880Z"",
+    ""reproduced"" : ""2021-09-30T22:41:14.474568072Z""
   }
-}",MNIST,
+}",MNIST,IDX,
 org.tribuo.transform.TransformedModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource"" : {
         ""source"" : {
           ""datasource-creation-time"" : {
-            ""original"" : ""2021-09-30T20:00:21.091311946Z"",
-            ""reproduced"" : ""2021-09-30T20:00:35.438849910Z""
+            ""original"" : ""2021-09-30T22:41:22.122783794Z"",
+            ""reproduced"" : ""2021-09-30T22:41:36.677480304Z""
           }
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:28.595063550Z"",
-    ""reproduced"" : ""2021-09-30T20:00:42.412851943Z""
+    ""original"" : ""2021-09-30T22:41:29.576947057Z"",
+    ""reproduced"" : ""2021-09-30T22:41:43.759491410Z""
   }
-}",MNIST,With TrainTestSplitter
+}",MNIST,IDX,With TrainTestSplitter
 org.tribuo.clustering.kmeans.KMeansModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:45.910912995Z"",
-    ""reproduced"" : ""2021-09-30T20:00:45.950078160Z""
+    ""original"" : ""2021-09-30T22:41:47.031370374Z"",
+    ""reproduced"" : ""2021-09-30T22:41:47.079355842Z""
   }
-}",Generated,
+}",Generated,Generator,
 org.tribuo.clustering.kmeans.KMeansModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:46.111277075Z"",
-    ""reproduced"" : ""2021-09-30T20:00:46.148193982Z""
+    ""original"" : ""2021-09-30T22:41:47.293200256Z"",
+    ""reproduced"" : ""2021-09-30T22:41:47.335025785Z""
   }
-}",Generated,KMeans++
+}",Generated,Generator,KMeans++
 org.tribuo.common.libsvm.LibSVMModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:49.431435438Z"",
-    ""reproduced"" : ""2021-09-30T20:00:49.563571014Z""
+    ""original"" : ""2021-09-30T22:41:50.691863105Z"",
+    ""reproduced"" : ""2021-09-30T22:41:50.824216545Z""
   }
-}",Generated,
+}",Generated,Generator,
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T20:00:53.431753011Z"",
-          ""reproduced"" : ""2021-09-30T20:00:53.669238496Z""
+          ""original"" : ""2021-09-30T22:41:54.674837351Z"",
+          ""reproduced"" : ""2021-09-30T22:41:54.939392728Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:53.577987294Z"",
-    ""reproduced"" : ""2021-09-30T20:00:53.673436922Z""
+    ""original"" : ""2021-09-30T22:41:54.829588258Z"",
+    ""reproduced"" : ""2021-09-30T22:41:54.943743662Z""
   }
-}",Generated,CSV Columnar with TrainTest
+}",Generated,CSV,CSV Columnar with TrainTest
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T20:00:53.422754937Z"",
-          ""reproduced"" : ""2021-09-30T20:00:53.695971928Z""
+          ""original"" : ""2021-09-30T22:41:54.663618897Z"",
+          ""reproduced"" : ""2021-09-30T22:41:54.978550550Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:00:53.604073457Z"",
-    ""reproduced"" : ""2021-09-30T20:00:53.702274780Z""
+    ""original"" : ""2021-09-30T22:41:54.851669318Z"",
+    ""reproduced"" : ""2021-09-30T22:41:54.985387381Z""
   }
-}",Generated,JSON Columnar with TrainTest
+}",Generated,JSON,JSON Columnar with TrainTest
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-09-30T20:00:57.407486579Z"",
-        ""reproduced"" : ""2021-09-30T20:01:11.973489948Z""
+        ""original"" : ""2021-09-30T22:41:58.674180856Z"",
+        ""reproduced"" : ""2021-09-30T22:42:13.784835163Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:01:11.934622015Z"",
-    ""reproduced"" : ""2021-09-30T20:01:23.756102721Z""
+    ""original"" : ""2021-09-30T22:42:13.737072949Z"",
+    ""reproduced"" : ""2021-09-30T22:42:26.372221564Z""
   }
-}",20 News,BoW Simple Logistic
+}",20 News,Directory of files,BoW Simple Logistic
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-09-30T20:01:24.771421440Z"",
-        ""reproduced"" : ""2021-09-30T20:01:39.024645327Z""
+        ""original"" : ""2021-09-30T22:42:27.473765794Z"",
+        ""reproduced"" : ""2021-09-30T22:42:42.846676540Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:01:38.947181494Z"",
-    ""reproduced"" : ""2021-09-30T20:01:50.299737978Z""
+    ""original"" : ""2021-09-30T22:42:42.765627962Z"",
+    ""reproduced"" : ""2021-09-30T22:42:55.020612710Z""
   }
-}",20 News,Unigram Logistic
+}",20 News,Directory of files,Unigram Logistic
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-09-30T20:01:51.308551454Z"",
-        ""reproduced"" : ""2021-09-30T20:02:42.712436035Z""
+        ""original"" : ""2021-09-30T22:42:56.238515336Z"",
+        ""reproduced"" : ""2021-09-30T22:43:54.527888764Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:02:42.675477215Z"",
-    ""reproduced"" : ""2021-09-30T20:03:25.881358710Z""
+    ""original"" : ""2021-09-30T22:43:54.482539138Z"",
+    ""reproduced"" : ""2021-09-30T22:44:37.606319894Z""
   }
-}",20 News,Bigram Logistic
+}",20 News,Directory of files,Bigram Logistic
 org.tribuo.ensemble.WeightedEnsembleModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-09-30T20:03:27.954962152Z"",
-          ""reproduced"" : ""2021-09-30T20:03:28.509002633Z""
+          ""original"" : ""2021-09-30T22:44:39.566681477Z"",
+          ""reproduced"" : ""2021-09-30T22:44:40.107424777Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-09-30T20:03:28.440849919Z"",
-    ""reproduced"" : ""2021-09-30T20:03:28.732126093Z""
+    ""original"" : ""2021-09-30T22:44:40.057162012Z"",
+    ""reproduced"" : ""2021-09-30T22:44:40.311748215Z""
   }
-}",Wine Quality,Random Forest Trainer
+}",Wine Quality,CSV*,Random Forest Trainer
 
