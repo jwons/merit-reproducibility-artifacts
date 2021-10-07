@@ -1,0 +1,33 @@
+<config>
+    <component name="logistic" type="org.tribuo.classification.sgd.linear.LinearSGDTrainer">
+        <property name="objective" value="log"/>
+        <property name="optimiser" value="adagrad"/>
+        <property name="epochs" value="2"/>
+        <property name="loggingInterval" value="10000"/>
+        <property name="minibatchSize" value="1"/>
+        <property name="seed" value="1"/>
+    </component>
+    
+    <component name="log" type="org.tribuo.classification.sgd.objectives.LogMulticlass"/>
+
+    <component name="adagrad" type="org.tribuo.math.optimisers.AdaGrad">
+        <property name="initialLearningRate" value="0.5"/>
+        <property name="epsilon" value="0.01"/>
+    </component>
+    
+    <component name="label-factory" type="org.tribuo.classification.LabelFactory"/>
+    
+    
+    <component name="mnist-train" type="org.tribuo.datasource.IDXDataSource">
+        <property name="featuresPath" value="data/train-images-idx3-ubyte.gz"/>
+        <property name="outputPath" value="data/train-labels-idx1-ubyte.gz"/>
+        <property name="outputFactory" value="label-factory"/>
+    </component>
+
+    <component name="mnist-test" type="org.tribuo.datasource.IDXDataSource">
+        <property name="featuresPath" value="data/t10k-images-idx3-ubyte.gz"/>
+        <property name="outputPath" value="data/t10k-labels-idx1-ubyte.gz"/>
+        <property name="outputFactory" value="label-factory"/>
+    </component>
+
+</config>

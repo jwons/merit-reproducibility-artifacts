@@ -57,6 +57,18 @@
         <property name="seed" value="1"/>
     </component>
 
+    <component name="fm" type="org.tribuo.regression.sgd.fm.FMRegressionTrainer">
+        <property name="objective" value="squared"/>
+        <property name="optimiser" value="adagrad"/>
+        <property name="epochs" value="10"/>
+        <property name="loggingInterval" value="1000"/>
+        <property name="minibatchSize" value="1"/>
+        <property name="seed" value="1"/>
+        <property name="standardise" value="true"/>
+        <property name="factorizedDimSize" value="5"/>
+        <property name="variance" value="0.5"/>
+    </component>
+
     <component name="squared" type="org.tribuo.regression.sgd.objectives.SquaredLoss"/>
 
     <component name="adagrad" type="org.tribuo.math.optimisers.AdaGrad">

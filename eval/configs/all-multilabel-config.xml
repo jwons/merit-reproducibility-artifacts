@@ -51,6 +51,17 @@
         <property name="seed" value="1"/>
     </component>
 
+    <component name="ml-fm" type="org.tribuo.multilabel.sgd.fm.FMMultiLabelTrainer">
+        <property name="objective" value="bce"/>
+        <property name="optimiser" value="adam"/>
+        <property name="epochs" value="10"/>
+        <property name="loggingInterval" value="1000"/>
+        <property name="minibatchSize" value="1"/>
+        <property name="seed" value="1"/>
+        <property name="factorizedDimSize" value="5"/>
+        <property name="variance" value="0.5"/>
+    </component>
+
     <component name="bce" type="org.tribuo.multilabel.sgd.objectives.BinaryCrossEntropy"/>
 
     <component name="adam" type="org.tribuo.math.optimisers.Adam"/>
@@ -59,10 +70,6 @@
         <property name="innerTrainer" value="logistic"/>
         <property name="randomOrder" value="true"/>
         <property name="seed" value="12345"/>
-    </component>
-
-    <component name="ml-br" type="org.tribuo.multilabel.baseline.IndependentMultiLabelTrainer">
-        <property name="innerTrainer" value="logistic"/>
     </component>
 
     <component name="ml-cc-ensemble" type="org.tribuo.multilabel.ensemble.CCEnsembleTrainer">

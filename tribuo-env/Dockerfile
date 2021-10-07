@@ -45,11 +45,7 @@ WORKDIR /home/jupyter
 # Install OLCUT 
 RUN git clone https://github.com/oracle/olcut.git \
 	&& cd olcut \
-	&& mvn clean install \ 
-	&& cd ..
-	# TODO I would use -Dmaven.repo.local here and for tribuo just to be extra explicit
-
-RUN echo 'refresh'
+	&& mvn clean install 
 
 # Copy in the whole directory so we can use the patch files
 COPY . .
@@ -57,20 +53,11 @@ COPY . .
 # Install and patch tribuo
 RUN git clone https://github.com/jwons/tribuo.git \
 	&& cd tribuo \ 
-	&& git checkout reproducibility \
+	&& git checkout fm \
 	&& git apply ../0001-added-test-for-roundtripping-objects-that-are-both-C.patch \
 	&& git apply ../0002-added-nulling-out-for-defaultValue-in-FieldResponseP.patch \
 	&& git apply ../0003-fieldresponseprocessor-bugfix.patch \
 	&& mvn clean install \
-	&& cd ..
 
-
-
-# Jupyter lab will be exposed on port 8888
-# It is important to still execute docker run -p 8888:8888 <image_name> 
-# As this command will not actually make the connection
-#EXPOSE 8888
-
-#CMD ["jupyter", "lab","--ip=0.0.0.0"]
-
+# adding eval scripts goes in the next stage
 

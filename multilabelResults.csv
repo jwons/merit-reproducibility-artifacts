@@ -1,0 +1,72 @@
+Task, Trainer, Model, Equivalent Evaluation, Model Prov Diff, Dataset Name, Datasource
+Multilabel Classification,class org.tribuo.multilabel.sgd.fm.FMMultiLabelTrainer,org.tribuo.multilabel.sgd.fm.FMMultiLabelModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-07T22:46:25.286711104Z"",
+        ""reproduced"" : ""2021-10-07T22:46:27.397256798Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-07T22:46:27.177525227Z"",
+    ""reproduced"" : ""2021-10-07T22:46:28.841251700Z""
+  }
+}",Yeast,LibSVM
+Multilabel Classification,class org.tribuo.multilabel.sgd.linear.LinearSGDTrainer,org.tribuo.multilabel.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-07T22:46:25.286711104Z"",
+        ""reproduced"" : ""2021-10-07T22:46:29.435481649Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-07T22:46:29.277032992Z"",
+    ""reproduced"" : ""2021-10-07T22:46:29.715460962Z""
+  }
+}",Yeast,LibSVM
+Multilabel Classification,class org.tribuo.multilabel.ensemble.CCEnsembleTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-07T22:46:25.286711104Z"",
+        ""reproduced"" : ""2021-10-07T22:46:54.941008365Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-07T22:46:54.860488520Z"",
+    ""reproduced"" : ""2021-10-07T22:47:18.472526502Z""
+  }
+}",Yeast,LibSVM
+Multilabel Classification,class org.tribuo.common.nearest.KNNTrainer,org.tribuo.common.nearest.KNNModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-07T22:46:25.286711104Z"",
+        ""reproduced"" : ""2021-10-07T22:47:21.179774870Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-07T22:47:21.112843607Z"",
+    ""reproduced"" : ""2021-10-07T22:47:21.227768901Z""
+  }
+}",Yeast,LibSVM
+Multilabel Classification,class org.tribuo.multilabel.baseline.ClassifierChainTrainer,org.tribuo.multilabel.baseline.ClassifierChainModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-07T22:46:25.286711104Z"",
+        ""reproduced"" : ""2021-10-07T22:47:25.009678627Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-07T22:47:24.948562673Z"",
+    ""reproduced"" : ""2021-10-07T22:47:27.330921140Z""
+  }
+}",Yeast,LibSVM
+
