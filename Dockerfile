@@ -1,8 +1,10 @@
 FROM tribuo-env
 
+RUN yum -y install bzip2
+
 # Copy in the whole directory so we can use the patch files
 COPY results ./results
-COPY result.csv ./result.csv
+COPY configResults.csv ./configResults.csv
 
 RUN chown -R jupyter:jupyter results \
 	&& chown -R jupyter:jupyter tribuo \
@@ -45,7 +47,12 @@ RUN cd results \
 	&& cd 20news \
 	&& tar -zxf ../20news-bydate.tar.gz 
 
-
+RUN cd results \
+	&& wget https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multilabel/yeast_train.svm.bz2 \
+	&& wget https://www.csie.ntu.edu.tw/~cjlin/libsvmtools/datasets/multilabel/yeast_test.svm.bz2 \ 
+	&& bzip2 -d yeast_train.svm.bz2 \
+	&& bzip2 -d yeast_test.svm.bz2
+	
 
 USER jupyter
 

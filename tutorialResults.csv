@@ -1,0 +1,192 @@
+Model, EqualEval, Diff, Dataset Name, Datasource, Note
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:47:17.218828770Z"",
+          ""reproduced"" : ""2021-10-06T20:47:17.489764514Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:47:17.375515604Z"",
+    ""reproduced"" : ""2021-10-06T20:47:17.497437838Z""
+  }
+}",Irises,CSV*,
+org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:47:18.167123776Z"",
+          ""reproduced"" : ""2021-10-06T20:47:18.415691858Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:47:18.410752685Z"",
+    ""reproduced"" : ""2021-10-06T20:47:18.452922013Z""
+  }
+}",Wine Quality,CSV*,LinearDecaySGD
+org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:47:18.167123776Z"",
+          ""reproduced"" : ""2021-10-06T20:47:18.491418555Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:47:18.487884208Z"",
+    ""reproduced"" : ""2021-10-06T20:47:18.531390045Z""
+  }
+}",Wine Quality,CSV*,AdaGrad
+org.tribuo.common.tree.TreeModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:47:18.167123776Z"",
+          ""reproduced"" : ""2021-10-06T20:47:18.614121147Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:47:18.610566943Z"",
+    ""reproduced"" : ""2021-10-06T20:47:18.660053777Z""
+  }
+}",Wine Quality,CSV*,
+org.tribuo.transform.TransformedModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:47:28.786758724Z"",
+          ""reproduced"" : ""2021-10-06T20:47:46.993585212Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:47:39.817698274Z"",
+    ""reproduced"" : ""2021-10-06T20:47:57.313440034Z""
+  }
+}",MNIST,IDX,
+org.tribuo.transform.TransformedModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource"" : {
+        ""source"" : {
+          ""datasource-creation-time"" : {
+            ""original"" : ""2021-10-06T20:48:05.507473351Z"",
+            ""reproduced"" : ""2021-10-06T20:48:19.974013639Z""
+          }
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:13.398188564Z"",
+    ""reproduced"" : ""2021-10-06T20:48:26.659723696Z""
+  }
+}",MNIST,IDX,With TrainTestSplitter
+org.tribuo.clustering.kmeans.KMeansModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:29.830599958Z"",
+    ""reproduced"" : ""2021-10-06T20:48:29.867865859Z""
+  }
+}",Generated,Generator,
+org.tribuo.clustering.kmeans.KMeansModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:30.045606340Z"",
+    ""reproduced"" : ""2021-10-06T20:48:30.079967077Z""
+  }
+}",Generated,Generator,KMeans++
+org.tribuo.common.libsvm.LibSVMModel,true,"{
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:33.075555269Z"",
+    ""reproduced"" : ""2021-10-06T20:48:33.190725182Z""
+  }
+}",Generated,Generator,
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:48:36.772658466Z"",
+          ""reproduced"" : ""2021-10-06T20:48:36.991379767Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:36.915931170Z"",
+    ""reproduced"" : ""2021-10-06T20:48:36.995926502Z""
+  }
+}",Generated,CSV,CSV Columnar with TrainTest
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""source"" : {
+        ""datasource-creation-time"" : {
+          ""original"" : ""2021-10-06T20:48:36.762701812Z"",
+          ""reproduced"" : ""2021-10-06T20:48:37.026928254Z""
+        }
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:36.933755095Z"",
+    ""reproduced"" : ""2021-10-06T20:48:37.031187635Z""
+  }
+}",Generated,JSON,JSON Columnar with TrainTest
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-06T20:48:40.158876392Z"",
+        ""reproduced"" : ""2021-10-06T20:48:53.427348024Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:48:53.391257268Z"",
+    ""reproduced"" : ""2021-10-06T20:49:04.350517033Z""
+  }
+}",20 News,Directory of files,BoW Simple Logistic
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-06T20:49:05.335828289Z"",
+        ""reproduced"" : ""2021-10-06T20:49:19.575941048Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:49:19.487579423Z"",
+    ""reproduced"" : ""2021-10-06T20:49:30.746187405Z""
+  }
+}",20 News,Directory of files,Unigram Logistic
+org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
+  ""dataset"" : {
+    ""datasource"" : {
+      ""datasource-creation-time"" : {
+        ""original"" : ""2021-10-06T20:49:31.729220677Z"",
+        ""reproduced"" : ""2021-10-06T20:50:24.079345916Z""
+      }
+    }
+  },
+  ""trained-at"" : {
+    ""original"" : ""2021-10-06T20:50:24.025968718Z"",
+    ""reproduced"" : ""2021-10-06T20:51:06.054404833Z""
+  }
+}",20 News,Directory of files,Bigram Logistic
+
