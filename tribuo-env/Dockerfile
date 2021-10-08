@@ -47,16 +47,10 @@ RUN git clone https://github.com/oracle/olcut.git \
 	&& cd olcut \
 	&& mvn clean install 
 
-# Copy in the whole directory so we can use the patch files
-COPY . .
-
 # Install and patch tribuo
 RUN git clone https://github.com/jwons/tribuo.git \
 	&& cd tribuo \ 
 	&& git checkout fm \
-	&& git apply ../0001-added-test-for-roundtripping-objects-that-are-both-C.patch \
-	&& git apply ../0002-added-nulling-out-for-defaultValue-in-FieldResponseP.patch \
-	&& git apply ../0003-fieldresponseprocessor-bugfix.patch \
 	&& mvn clean install \
 
 # adding eval scripts goes in the next stage
