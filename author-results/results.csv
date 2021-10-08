@@ -4,15 +4,15 @@ org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:45:31.949543747Z"",
-          ""reproduced"" : ""2021-10-07T22:45:32.212190359Z""
+          ""original"" : ""2021-10-08T23:15:46.806824119Z"",
+          ""reproduced"" : ""2021-10-08T23:15:47.322210821Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:45:32.094710336Z"",
-    ""reproduced"" : ""2021-10-07T22:45:32.221932856Z""
+    ""original"" : ""2021-10-08T23:15:47.086660434Z"",
+    ""reproduced"" : ""2021-10-08T23:15:47.352368231Z""
   }
 }",Irises,CSV*,
 org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
@@ -20,15 +20,15 @@ org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:45:32.950915769Z"",
-          ""reproduced"" : ""2021-10-07T22:45:33.228468047Z""
+          ""original"" : ""2021-10-08T23:15:48.520355412Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.056149144Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:45:33.223458540Z"",
-    ""reproduced"" : ""2021-10-07T22:45:33.283184890Z""
+    ""original"" : ""2021-10-08T23:15:49.040315908Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.124350918Z""
   }
 }",Wine Quality,CSV*,LinearDecaySGD
 org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
@@ -36,15 +36,15 @@ org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:45:32.950915769Z"",
-          ""reproduced"" : ""2021-10-07T22:45:33.342460796Z""
+          ""original"" : ""2021-10-08T23:15:48.520355412Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.223259089Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:45:33.337915668Z"",
-    ""reproduced"" : ""2021-10-07T22:45:33.382146453Z""
+    ""original"" : ""2021-10-08T23:15:49.216544575Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.279116991Z""
   }
 }",Wine Quality,CSV*,AdaGrad
 org.tribuo.common.tree.TreeModel,true,"{
@@ -52,15 +52,15 @@ org.tribuo.common.tree.TreeModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:45:32.950915769Z"",
-          ""reproduced"" : ""2021-10-07T22:45:33.480222983Z""
+          ""original"" : ""2021-10-08T23:15:48.520355412Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.409283416Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:45:33.476807477Z"",
-    ""reproduced"" : ""2021-10-07T22:45:33.536763610Z""
+    ""original"" : ""2021-10-08T23:15:49.403755833Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.503251233Z""
   }
 }",Wine Quality,CSV*,
 org.tribuo.transform.TransformedModel,true,"{
@@ -68,15 +68,15 @@ org.tribuo.transform.TransformedModel,true,"{
     ""datasource"" : {
       ""datasource"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:45:43.427813330Z"",
-          ""reproduced"" : ""2021-10-07T22:45:59.419852452Z""
+          ""original"" : ""2021-10-08T23:16:03.202858522Z"",
+          ""reproduced"" : ""2021-10-08T23:16:23.342374254Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:45:52.994140554Z"",
-    ""reproduced"" : ""2021-10-07T22:46:08.987793902Z""
+    ""original"" : ""2021-10-08T23:16:15.213149345Z"",
+    ""reproduced"" : ""2021-10-08T23:16:34.787676526Z""
   }
 }",MNIST,IDX,
 org.tribuo.transform.TransformedModel,true,"{
@@ -85,34 +85,34 @@ org.tribuo.transform.TransformedModel,true,"{
       ""datasource"" : {
         ""source"" : {
           ""datasource-creation-time"" : {
-            ""original"" : ""2021-10-07T22:46:17.166878123Z"",
-            ""reproduced"" : ""2021-10-07T22:46:35.799800246Z""
+            ""original"" : ""2021-10-08T23:16:43.892853770Z"",
+            ""reproduced"" : ""2021-10-08T23:16:59.200698859Z""
           }
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:26.222240430Z"",
-    ""reproduced"" : ""2021-10-07T22:46:44.401787487Z""
+    ""original"" : ""2021-10-08T23:16:52.407708155Z"",
+    ""reproduced"" : ""2021-10-08T23:17:05.997589472Z""
   }
 }",MNIST,IDX,With TrainTestSplitter
 org.tribuo.clustering.kmeans.KMeansModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:48.161790133Z"",
-    ""reproduced"" : ""2021-10-07T22:46:48.205975227Z""
+    ""original"" : ""2021-10-08T23:17:09.129532179Z"",
+    ""reproduced"" : ""2021-10-08T23:17:09.168702387Z""
   }
 }",Generated,Generator,
 org.tribuo.clustering.kmeans.KMeansModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:48.389022168Z"",
-    ""reproduced"" : ""2021-10-07T22:46:48.433192664Z""
+    ""original"" : ""2021-10-08T23:17:09.370500912Z"",
+    ""reproduced"" : ""2021-10-08T23:17:09.405557491Z""
   }
 }",Generated,Generator,KMeans++
 org.tribuo.common.libsvm.LibSVMModel,true,"{
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:52.023161499Z"",
-    ""reproduced"" : ""2021-10-07T22:46:52.118876962Z""
+    ""original"" : ""2021-10-08T23:17:12.425512981Z"",
+    ""reproduced"" : ""2021-10-08T23:17:12.561796192Z""
   }
 }",Generated,Generator,
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
@@ -120,15 +120,15 @@ org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:56.284653412Z"",
-          ""reproduced"" : ""2021-10-07T22:46:56.536791031Z""
+          ""original"" : ""2021-10-08T23:17:16.185807961Z"",
+          ""reproduced"" : ""2021-10-08T23:17:16.430977631Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:56.444078979Z"",
-    ""reproduced"" : ""2021-10-07T22:46:56.540558515Z""
+    ""original"" : ""2021-10-08T23:17:16.337243724Z"",
+    ""reproduced"" : ""2021-10-08T23:17:16.434401113Z""
   }
 }",Generated,CSV,CSV Columnar with TrainTest
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
@@ -136,57 +136,57 @@ org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:56.274543783Z"",
-          ""reproduced"" : ""2021-10-07T22:46:56.576859165Z""
+          ""original"" : ""2021-10-08T23:17:16.175626810Z"",
+          ""reproduced"" : ""2021-10-08T23:17:16.459211358Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:56.467183801Z"",
-    ""reproduced"" : ""2021-10-07T22:46:56.581353726Z""
+    ""original"" : ""2021-10-08T23:17:16.362467638Z"",
+    ""reproduced"" : ""2021-10-08T23:17:16.463969377Z""
   }
 }",Generated,JSON,JSON Columnar with TrainTest
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-10-07T22:47:00.624948744Z"",
-        ""reproduced"" : ""2021-10-07T22:47:17.098102923Z""
+        ""original"" : ""2021-10-08T23:17:19.848724166Z"",
+        ""reproduced"" : ""2021-10-08T23:17:33.028216253Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:47:17.052735632Z"",
-    ""reproduced"" : ""2021-10-07T22:47:29.935477057Z""
+    ""original"" : ""2021-10-08T23:17:32.987747165Z"",
+    ""reproduced"" : ""2021-10-08T23:17:43.529661595Z""
   }
 }",20 News,Directory of files,BoW Simple Logistic
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-10-07T22:47:30.987334529Z"",
-        ""reproduced"" : ""2021-10-07T22:47:44.966663813Z""
+        ""original"" : ""2021-10-08T23:17:44.513013170Z"",
+        ""reproduced"" : ""2021-10-08T23:17:57.166116877Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:47:44.888836275Z"",
-    ""reproduced"" : ""2021-10-07T22:47:56.352380573Z""
+    ""original"" : ""2021-10-08T23:17:57.077308020Z"",
+    ""reproduced"" : ""2021-10-08T23:18:07.516990769Z""
   }
 }",20 News,Directory of files,Unigram Logistic
 org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
   ""dataset"" : {
     ""datasource"" : {
       ""datasource-creation-time"" : {
-        ""original"" : ""2021-10-07T22:47:57.314109927Z"",
-        ""reproduced"" : ""2021-10-07T22:48:47.086104622Z""
+        ""original"" : ""2021-10-08T23:18:08.482491447Z"",
+        ""reproduced"" : ""2021-10-08T23:18:57.572871345Z""
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:48:47.044856454Z"",
-    ""reproduced"" : ""2021-10-07T22:49:30.772775552Z""
+    ""original"" : ""2021-10-08T23:18:57.537356079Z"",
+    ""reproduced"" : ""2021-10-08T23:19:37.576547294Z""
   }
 }",20 News,Directory of files,Bigram Logistic
 

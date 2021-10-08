@@ -4,9 +4,7 @@ RUN yum -y install bzip2
 
 # Copy in the whole directory so we can use the patch files
 COPY eval ./eval
-COPY configResults.csv ./configResults.csv 
-COPY tutorialResults.csv ./tutorialResults.csv  
-COPY multilabelResults.csv  ./multilabelResults.csv
+COPY author-results ./author-results
 
 RUN chown -R jupyter:jupyter eval \
 	&& chown -R jupyter:jupyter tribuo \

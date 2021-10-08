@@ -4,15 +4,15 @@ Regression,class org.tribuo.common.tree.ExtraTreesTrainer,org.tribuo.ensemble.We
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:31.235709623Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:44.000111111Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:31.210096425Z"",
-    ""reproduced"" : ""2021-10-07T22:46:31.482439231Z""
+    ""original"" : ""2021-10-08T23:15:43.964632201Z"",
+    ""reproduced"" : ""2021-10-08T23:15:44.231615645Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.sgd.linear.LinearSGDTrainer,org.tribuo.regression.sgd.linear.LinearSGDModel,true,"{
@@ -20,15 +20,15 @@ Regression,class org.tribuo.regression.sgd.linear.LinearSGDTrainer,org.tribuo.re
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:31.755266166Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:44.543539359Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:31.748681626Z"",
-    ""reproduced"" : ""2021-10-07T22:46:31.824877340Z""
+    ""original"" : ""2021-10-08T23:15:44.537150147Z"",
+    ""reproduced"" : ""2021-10-08T23:15:44.586405181Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.libsvm.LibSVMRegressionTrainer,org.tribuo.common.libsvm.LibSVMModel,true,"{
@@ -36,15 +36,15 @@ Regression,class org.tribuo.regression.libsvm.LibSVMRegressionTrainer,org.tribuo
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:32.820706394Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:45.596083425Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:32.815318634Z"",
-    ""reproduced"" : ""2021-10-07T22:46:33.663901535Z""
+    ""original"" : ""2021-10-08T23:15:45.590793942Z"",
+    ""reproduced"" : ""2021-10-08T23:15:46.396116191Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.slm.LARSTrainer,org.tribuo.regression.slm.SparseLinearModel,true,"{
@@ -52,15 +52,15 @@ Regression,class org.tribuo.regression.slm.LARSTrainer,org.tribuo.regression.slm
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:33.782327312Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:46.632772746Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:33.776424895Z"",
-    ""reproduced"" : ""2021-10-07T22:46:33.819357795Z""
+    ""original"" : ""2021-10-08T23:15:46.627935078Z"",
+    ""reproduced"" : ""2021-10-08T23:15:46.677844799Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.xgboost.XGBoostRegressionTrainer,org.tribuo.common.xgboost.XGBoostModel,true,"{
@@ -68,15 +68,15 @@ Regression,class org.tribuo.regression.xgboost.XGBoostRegressionTrainer,org.trib
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:33.910844124Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:46.901573962Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:33.907006073Z"",
-    ""reproduced"" : ""2021-10-07T22:46:33.951016112Z""
+    ""original"" : ""2021-10-08T23:15:46.891499352Z"",
+    ""reproduced"" : ""2021-10-08T23:15:47.167703959Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.sgd.fm.FMRegressionTrainer,org.tribuo.regression.sgd.fm.FMRegressionModel,true,"{
@@ -84,15 +84,15 @@ Regression,class org.tribuo.regression.sgd.fm.FMRegressionTrainer,org.tribuo.reg
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:34.080925680Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:47.404498543Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:34.076821394Z"",
-    ""reproduced"" : ""2021-10-07T22:46:34.162065432Z""
+    ""original"" : ""2021-10-08T23:15:47.398564049Z"",
+    ""reproduced"" : ""2021-10-08T23:15:47.507767636Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.common.tree.RandomForestTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
@@ -100,15 +100,15 @@ Regression,class org.tribuo.common.tree.RandomForestTrainer,org.tribuo.ensemble.
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:34.403098088Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:47.907469865Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:34.393200906Z"",
-    ""reproduced"" : ""2021-10-07T22:46:34.631466100Z""
+    ""original"" : ""2021-10-08T23:15:47.898502188Z"",
+    ""reproduced"" : ""2021-10-08T23:15:48.167061468Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.liblinear.LibLinearRegressionTrainer,org.tribuo.common.liblinear.LibLinearModel,true,"{
@@ -116,15 +116,15 @@ Regression,class org.tribuo.regression.liblinear.LibLinearRegressionTrainer,org.
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:34.745385210Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:48.359716878Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:34.643077802Z"",
-    ""reproduced"" : ""2021-10-07T22:46:34.755735656Z""
+    ""original"" : ""2021-10-08T23:15:48.233011683Z"",
+    ""reproduced"" : ""2021-10-08T23:15:48.378336919Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.rtree.CARTJointRegressionTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -132,15 +132,15 @@ Regression,class org.tribuo.regression.rtree.CARTJointRegressionTrainer,org.trib
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:34.862388057Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:48.535099260Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:34.859186392Z"",
-    ""reproduced"" : ""2021-10-07T22:46:34.917176904Z""
+    ""original"" : ""2021-10-08T23:15:48.531468666Z"",
+    ""reproduced"" : ""2021-10-08T23:15:48.609482698Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.common.nearest.KNNTrainer,org.tribuo.common.nearest.KNNModel,true,"{
@@ -148,15 +148,15 @@ Regression,class org.tribuo.common.nearest.KNNTrainer,org.tribuo.common.nearest.
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:34.923635921Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:48.622216392Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:34.921159026Z"",
-    ""reproduced"" : ""2021-10-07T22:46:34.932993738Z""
+    ""original"" : ""2021-10-08T23:15:48.618285191Z"",
+    ""reproduced"" : ""2021-10-08T23:15:48.640243262Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -164,15 +164,15 @@ Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.co
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.063410552Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:48.882765579Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.060072945Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.101857811Z""
+    ""original"" : ""2021-10-08T23:15:48.878392568Z"",
+    ""reproduced"" : ""2021-10-08T23:15:48.955656060Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.slm.ElasticNetCDTrainer,org.tribuo.regression.slm.SparseLinearModel,true,"{
@@ -180,15 +180,15 @@ Regression,class org.tribuo.regression.slm.ElasticNetCDTrainer,org.tribuo.regres
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.121066736Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:48.988242878Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.118980443Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.142993937Z""
+    ""original"" : ""2021-10-08T23:15:48.985196758Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.065681307Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -196,15 +196,15 @@ Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.co
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.171601017Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.093045946Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.169402174Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.195921668Z""
+    ""original"" : ""2021-10-08T23:15:49.089766204Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.124655489Z""
   }
 }",Wine Quality,CSV
 Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -212,15 +212,15 @@ Regression,class org.tribuo.regression.rtree.CARTRegressionTrainer,org.tribuo.co
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:30.583101852Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.219864543Z""
+          ""original"" : ""2021-10-08T23:15:43.371878660Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.165577505Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.217799806Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.248811336Z""
+    ""original"" : ""2021-10-08T23:15:49.162442664Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.225245355Z""
   }
 }",Wine Quality,CSV
 Classification,class org.tribuo.classification.mnb.MultinomialNaiveBayesTrainer,org.tribuo.classification.mnb.MultinomialNaiveBayesModel,true,"{
@@ -228,15 +228,15 @@ Classification,class org.tribuo.classification.mnb.MultinomialNaiveBayesTrainer,
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.694228718Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.856422691Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.688857620Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.697585097Z""
+    ""original"" : ""2021-10-08T23:15:49.850046008Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.860624249Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.libsvm.LibSVMClassificationTrainer,org.tribuo.common.libsvm.LibSVMModel,true,"{
@@ -244,15 +244,15 @@ Classification,class org.tribuo.classification.libsvm.LibSVMClassificationTraine
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.756104300Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:49.934724158Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.752603265Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.782168999Z""
+    ""original"" : ""2021-10-08T23:15:49.931061517Z"",
+    ""reproduced"" : ""2021-10-08T23:15:49.970098523Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.ensemble.AdaBoostTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
@@ -261,16 +261,16 @@ Classification,class org.tribuo.classification.ensemble.AdaBoostTrainer,org.trib
       ""datasource"" : {
         ""source"" : {
           ""datasource-creation-time"" : {
-            ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-            ""reproduced"" : ""2021-10-07T22:46:35.809762425Z""
+            ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+            ""reproduced"" : ""2021-10-08T23:15:50.019871341Z""
           }
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.804905173Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.823425456Z""
+    ""original"" : ""2021-10-08T23:15:50.012116462Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.040253555Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.ensemble.BaggingTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
@@ -278,15 +278,15 @@ Classification,class org.tribuo.ensemble.BaggingTrainer,org.tribuo.ensemble.Weig
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.850296145Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.108651304Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.845358562Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.863654074Z""
+    ""original"" : ""2021-10-08T23:15:50.093877527Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.151360636Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.sgd.fm.FMClassificationTrainer,org.tribuo.classification.sgd.fm.FMClassificationModel,true,"{
@@ -294,15 +294,15 @@ Classification,class org.tribuo.classification.sgd.fm.FMClassificationTrainer,or
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.891855325Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.232398190Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.889612963Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.907679427Z""
+    ""original"" : ""2021-10-08T23:15:50.229838883Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.265958800Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.liblinear.LibLinearClassificationTrainer,org.tribuo.common.liblinear.LibLinearModel,true,"{
@@ -310,15 +310,15 @@ Classification,class org.tribuo.classification.liblinear.LibLinearClassification
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.927698967Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.297507087Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.911750923Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.929429788Z""
+    ""original"" : ""2021-10-08T23:15:50.279807180Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.299792863Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -326,15 +326,15 @@ Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,o
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.942193070Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.327436809Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.940659654Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.944349776Z""
+    ""original"" : ""2021-10-08T23:15:50.324869114Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.331077030Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.common.nearest.KNNTrainer,org.tribuo.common.nearest.KNNModel,true,"{
@@ -342,15 +342,15 @@ Classification,class org.tribuo.common.nearest.KNNTrainer,org.tribuo.common.near
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.948233923Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.343415060Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.946763888Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.949771827Z""
+    ""original"" : ""2021-10-08T23:15:50.338032834Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.346181262Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -358,15 +358,15 @@ Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,o
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.957928099Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.362987682Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.956369138Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.965036396Z""
+    ""original"" : ""2021-10-08T23:15:50.359533396Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.367441113Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.sgd.linear.LinearSGDTrainer,org.tribuo.classification.sgd.linear.LinearSGDModel,true,"{
@@ -374,15 +374,15 @@ Classification,class org.tribuo.classification.sgd.linear.LinearSGDTrainer,org.t
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:35.981768275Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.403504268Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:35.979853686Z"",
-    ""reproduced"" : ""2021-10-07T22:46:35.994099942Z""
+    ""original"" : ""2021-10-08T23:15:50.396258294Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.421415558Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.common.tree.RandomForestTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
@@ -390,15 +390,15 @@ Classification,class org.tribuo.common.tree.RandomForestTrainer,org.tribuo.ensem
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:36.005374256Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.449595318Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:36.002495391Z"",
-    ""reproduced"" : ""2021-10-07T22:46:36.011441770Z""
+    ""original"" : ""2021-10-08T23:15:50.442427650Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.461964080Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.common.tree.ExtraTreesTrainer,org.tribuo.ensemble.WeightedEnsembleModel,true,"{
@@ -406,15 +406,15 @@ Classification,class org.tribuo.common.tree.ExtraTreesTrainer,org.tribuo.ensembl
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:36.023115182Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.500474518Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:36.020324187Z"",
-    ""reproduced"" : ""2021-10-07T22:46:36.029548236Z""
+    ""original"" : ""2021-10-08T23:15:50.496097201Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.512751247Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,org.tribuo.common.tree.TreeModel,true,"{
@@ -422,15 +422,15 @@ Classification,class org.tribuo.classification.dtree.CARTClassificationTrainer,o
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:36.035669178Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.525700836Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:36.034094947Z"",
-    ""reproduced"" : ""2021-10-07T22:46:36.038047490Z""
+    ""original"" : ""2021-10-08T23:15:50.523603741Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.529132114Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.xgboost.XGBoostClassificationTrainer,org.tribuo.common.xgboost.XGBoostModel,true,"{
@@ -438,15 +438,15 @@ Classification,class org.tribuo.classification.xgboost.XGBoostClassificationTrai
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:36.061413622Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.705939181Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:36.059249802Z"",
-    ""reproduced"" : ""2021-10-07T22:46:36.145929440Z""
+    ""original"" : ""2021-10-08T23:15:50.692642469Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.752848627Z""
   }
 }",Irises,CSV
 Classification,class org.tribuo.classification.sgd.kernel.KernelSVMTrainer,org.tribuo.classification.sgd.kernel.KernelSVMModel,true,"{
@@ -454,15 +454,15 @@ Classification,class org.tribuo.classification.sgd.kernel.KernelSVMTrainer,org.t
     ""datasource"" : {
       ""source"" : {
         ""datasource-creation-time"" : {
-          ""original"" : ""2021-10-07T22:46:35.438114919Z"",
-          ""reproduced"" : ""2021-10-07T22:46:36.190348109Z""
+          ""original"" : ""2021-10-08T23:15:49.495400702Z"",
+          ""reproduced"" : ""2021-10-08T23:15:50.902653885Z""
         }
       }
     }
   },
   ""trained-at"" : {
-    ""original"" : ""2021-10-07T22:46:36.188806106Z"",
-    ""reproduced"" : ""2021-10-07T22:46:36.223954094Z""
+    ""original"" : ""2021-10-08T23:15:50.899911889Z"",
+    ""reproduced"" : ""2021-10-08T23:15:50.949925484Z""
   }
 }",Irises,CSV
 
