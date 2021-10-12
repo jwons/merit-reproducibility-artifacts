@@ -117,6 +117,8 @@ public class TestReproductionTest {
         DenseMatrix oldWeights = ((LinearSGDModel) oldModel).getWeightsCopy();
         DenseMatrix newWeights = ((LinearSGDModel) newModel).getWeightsCopy();
 
+        System.out.println(ReproUtil.diffProvenance(oldModel.getProvenance(), newModel.getProvenance()));
+
         for (int i = 0; i < oldWeights.getDimension1Size(); i++){
             for (int j = 0; j < oldWeights.getDimension2Size(); j++){
                 Assertions.assertEquals(oldWeights.get(i, j), newWeights.get(i, j));
