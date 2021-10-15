@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import org.tribuo.*;
+import org.tribuo.common.tree.TreeModel;
 import org.tribuo.evaluation.Evaluation;
 import org.tribuo.evaluation.Evaluator;
 import org.tribuo.evaluation.TrainTestSplitter;

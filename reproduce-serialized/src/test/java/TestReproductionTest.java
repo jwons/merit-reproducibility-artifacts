@@ -6,16 +6,24 @@ import org.tribuo.DataSource;
 import org.tribuo.Model;
 import org.tribuo.classification.evaluation.LabelEvaluation;
 import org.tribuo.classification.evaluation.LabelEvaluator;
+import org.tribuo.classification.sgd.fm.FMClassificationModel;
 import org.tribuo.classification.sgd.linear.LinearSGDModel;
+import org.tribuo.common.liblinear.LibLinearModel;
+import org.tribuo.common.sgd.AbstractFMModel;
 import org.tribuo.common.sgd.AbstractLinearSGDTrainer;
 import org.tribuo.common.sgd.AbstractSGDTrainer;
 import org.tribuo.ensemble.BaggingTrainer;
 import org.tribuo.evaluation.Evaluation;
 import org.tribuo.evaluation.TrainTestSplitter;
 import org.tribuo.math.la.DenseMatrix;
+import org.tribuo.math.la.SparseVector;
+import org.tribuo.regression.evaluation.RegressionEvaluation;
 import org.tribuo.regression.evaluation.RegressionEvaluator;
+import org.tribuo.regression.liblinear.LibLinearRegressionModel;
+import org.tribuo.regression.sgd.fm.FMRegressionModel;
 import org.tribuo.regression.sgd.linear.LinearSGDTrainer;
 import org.tribuo.regression.slm.SLMTrainer;
+import org.tribuo.regression.slm.SparseLinearModel;
 import org.tribuo.reproducibility.ReproUtil;
 
 import java.io.File;
@@ -25,6 +33,8 @@ import java.io.ObjectInputStream;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Map;
+import java.util.TreeSet;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -124,5 +134,253 @@ public class TestReproductionTest {
                 Assertions.assertEquals(oldWeights.get(i, j), newWeights.get(i, j));
             }
         }
+    }
+
+    @Test
+    public void testSparseLinearWeights() throws Exception {
+        URL uModels = TestReproductionTest.class.getResource("/models/regression");
+        URL uData = TestReproductionTest.class.getResource("/data/winequality-red.csv");
+        File directoryPath = new File(uModels.getFile());
+
+        Model oldModel = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(directoryPath + "/enet.model");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            oldModel = (Model) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Model class not found");
+            c.printStackTrace();
+        }
+
+        ReproUtil repro = new ReproUtil(oldModel);
+        ArrayList<String> componentNames = new ArrayList<String>(repro.getConfigurationManager().getComponentNames());
+        String sourceKey = null;
+        for (String name : componentNames){
+            if(name.length() > 13 && "csvdatasource".equals(name.substring(0, 13))){
+                sourceKey = name;
+            }
+        }
+        repro.getConfigurationManager().overrideConfigurableProperty(sourceKey, "dataPath", new SimpleProperty(uData.getFile()));
+        Model newModel = repro.reproduceFromProvenance();
+
+        var splitter = new TrainTestSplitter((DataSource) repro.getConfigurationManager().lookup(sourceKey), 0.7f, 0L);
+
+        RegressionEvaluator regressionEvaluator = new RegressionEvaluator();
+
+        RegressionEvaluation oldEvaluation = regressionEvaluator.evaluate(oldModel,splitter.getTest());
+        RegressionEvaluation newEvaluation = regressionEvaluator.evaluate(newModel,splitter.getTest());
+
+        Assertions.assertEquals(oldEvaluation.asMap(), newEvaluation.asMap());
+        Map<String, SparseVector> oldWeights = ((SparseLinearModel) oldModel).getWeights();
+        Map<String, SparseVector> newWeights = ((SparseLinearModel) newModel).getWeights();
+
+        System.out.println(ReproUtil.diffProvenance(oldModel.getProvenance(), newModel.getProvenance()));
+
+        TreeSet<String> mapAkeys = new TreeSet<>(oldWeights.keySet());
+        TreeSet<String> mapBkeys = new TreeSet<>(newWeights.keySet());
+        TreeSet<String> intersectionOfKeys = new TreeSet<>(oldWeights.keySet());
+
+        intersectionOfKeys.retainAll(mapBkeys);
+
+        Assertions.assertEquals(mapAkeys.size(), mapBkeys.size());
+
+        for (String key : intersectionOfKeys){
+            Assertions.assertEquals(oldWeights.get(key), newWeights.get(key));
+        }
+    }
+
+    @Test
+    public void testFMRegressionWeights() throws Exception {
+        URL uModels = TestReproductionTest.class.getResource("/models/regression");
+        URL uData = TestReproductionTest.class.getResource("/data/winequality-red.csv");
+        File directoryPath = new File(uModels.getFile());
+
+        Model oldModel = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(directoryPath + "/fm.model");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            oldModel = (Model) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Model class not found");
+            c.printStackTrace();
+        }
+
+        ReproUtil repro = new ReproUtil(oldModel);
+        ArrayList<String> componentNames = new ArrayList<String>(repro.getConfigurationManager().getComponentNames());
+        String sourceKey = null;
+        for (String name : componentNames){
+            if(name.length() > 13 && "csvdatasource".equals(name.substring(0, 13))){
+                sourceKey = name;
+            }
+        }
+        repro.getConfigurationManager().overrideConfigurableProperty(sourceKey, "dataPath", new SimpleProperty(uData.getFile()));
+        Model newModel = repro.reproduceFromProvenance();
+
+        var splitter = new TrainTestSplitter((DataSource) repro.getConfigurationManager().lookup(sourceKey), 0.7f, 0L);
+
+        RegressionEvaluator regressionEvaluator = new RegressionEvaluator();
+
+        RegressionEvaluation oldEvaluation = regressionEvaluator.evaluate(oldModel,splitter.getTest());
+        RegressionEvaluation newEvaluation = regressionEvaluator.evaluate(newModel,splitter.getTest());
+
+        Assertions.assertEquals(oldEvaluation.asMap(), newEvaluation.asMap());
+        DenseMatrix oldWeights = ((FMRegressionModel) oldModel).getLinearWeightsCopy();
+        DenseMatrix newWeights = ((FMRegressionModel) newModel).getLinearWeightsCopy();
+
+        System.out.println(ReproUtil.diffProvenance(oldModel.getProvenance(), newModel.getProvenance()));
+
+        for (int i = 0; i < oldWeights.getDimension1Size(); i++){
+            for (int j = 0; j < oldWeights.getDimension2Size(); j++){
+                Assertions.assertEquals(oldWeights.get(i, j), newWeights.get(i, j));
+            }
+        }
+    }
+
+    @Test
+    public void testFMClassificationWeights() throws Exception {
+        URL uModels = TestReproductionTest.class.getResource("/models/classification");
+        URL uData = TestReproductionTest.class.getResource("/data/bezdekIris.data");
+        File directoryPath = new File(uModels.getFile());
+
+        Model oldModel = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(directoryPath + "/fm.model");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            oldModel = (Model) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Model class not found");
+            c.printStackTrace();
+        }
+
+        ReproUtil repro = new ReproUtil(oldModel);
+        ArrayList<String> componentNames = new ArrayList<String>(repro.getConfigurationManager().getComponentNames());
+        String sourceKey = null;
+        for (String name : componentNames){
+            if(name.length() > 13 && "csvdatasource".equals(name.substring(0, 13))){
+                sourceKey = name;
+            }
+        }
+        repro.getConfigurationManager().overrideConfigurableProperty(sourceKey, "dataPath", new SimpleProperty(uData.getFile()));
+        Model newModel = repro.reproduceFromProvenance();
+
+        var splitter = new TrainTestSplitter((DataSource) repro.getConfigurationManager().lookup(sourceKey), 0.7f, 0L);
+
+        LabelEvaluator labelEvaluator = new LabelEvaluator();
+
+        LabelEvaluation oldEvaluation = labelEvaluator.evaluate(oldModel,splitter.getTest());
+        LabelEvaluation newEvaluation = labelEvaluator.evaluate(newModel,splitter.getTest());
+
+        Assertions.assertEquals(oldEvaluation.asMap(), newEvaluation.asMap());
+        DenseMatrix oldWeights = ((FMClassificationModel) oldModel).getLinearWeightsCopy();
+        DenseMatrix newWeights = ((FMClassificationModel) newModel).getLinearWeightsCopy();
+
+        System.out.println(ReproUtil.diffProvenance(oldModel.getProvenance(), newModel.getProvenance()));
+
+        for (int i = 0; i < oldWeights.getDimension1Size(); i++){
+            for (int j = 0; j < oldWeights.getDimension2Size(); j++){
+                Assertions.assertEquals(oldWeights.get(i, j), newWeights.get(i, j));
+            }
+        }
+    }
+
+    @Test
+    public void testLibLinearRegressionWeights() throws Exception {
+        URL uModels = TestReproductionTest.class.getResource("/models/regression");
+        URL uData = TestReproductionTest.class.getResource("/data/winequality-red.csv");
+        File directoryPath = new File(uModels.getFile());
+
+        Model oldModel = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(directoryPath + "/liblinear.model");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            oldModel = (Model) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Model class not found");
+            c.printStackTrace();
+        }
+
+        ReproUtil repro = new ReproUtil(oldModel);
+        ArrayList<String> componentNames = new ArrayList<String>(repro.getConfigurationManager().getComponentNames());
+        String sourceKey = null;
+        for (String name : componentNames){
+            if(name.length() > 13 && "csvdatasource".equals(name.substring(0, 13))){
+                sourceKey = name;
+            }
+        }
+        repro.getConfigurationManager().overrideConfigurableProperty(sourceKey, "dataPath", new SimpleProperty(uData.getFile()));
+        Model newModel = repro.reproduceFromProvenance();
+
+        var splitter = new TrainTestSplitter((DataSource) repro.getConfigurationManager().lookup(sourceKey), 0.7f, 0L);
+
+        RegressionEvaluator regressionEvaluator = new RegressionEvaluator();
+
+        RegressionEvaluation oldEvaluation = regressionEvaluator.evaluate(oldModel,splitter.getTest());
+        RegressionEvaluation newEvaluation = regressionEvaluator.evaluate(newModel,splitter.getTest());
+
+        Assertions.assertEquals(oldEvaluation.asMap(), newEvaluation.asMap());
+
+        Assertions.assertEquals(((LibLinearRegressionModel)oldModel).getTopFeatures(-1), ((LibLinearRegressionModel)oldModel).getTopFeatures(-1));
+    }
+
+    @Test
+    public void testLibLinearClassificationWeights() throws Exception {
+        URL uModels = TestReproductionTest.class.getResource("/models/classification");
+        URL uData = TestReproductionTest.class.getResource("/data/bezdekIris.data");
+        File directoryPath = new File(uModels.getFile());
+
+        Model oldModel = null;
+        try {
+            FileInputStream fileIn = new FileInputStream(directoryPath + "/liblinear.model");
+            ObjectInputStream in = new ObjectInputStream(fileIn);
+            oldModel = (Model) in.readObject();
+            in.close();
+            fileIn.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException c) {
+            System.out.println("Model class not found");
+            c.printStackTrace();
+        }
+
+        ReproUtil repro = new ReproUtil(oldModel);
+        ArrayList<String> componentNames = new ArrayList<String>(repro.getConfigurationManager().getComponentNames());
+        String sourceKey = null;
+        for (String name : componentNames){
+            if(name.length() > 13 && "csvdatasource".equals(name.substring(0, 13))){
+                sourceKey = name;
+            }
+        }
+        repro.getConfigurationManager().overrideConfigurableProperty(sourceKey, "dataPath", new SimpleProperty(uData.getFile()));
+        Model newModel = repro.reproduceFromProvenance();
+
+        var splitter = new TrainTestSplitter((DataSource) repro.getConfigurationManager().lookup(sourceKey), 0.7f, 0L);
+
+        LabelEvaluator labelEvaluator = new LabelEvaluator();
+
+        LabelEvaluation oldEvaluation = labelEvaluator.evaluate(oldModel,splitter.getTest());
+        LabelEvaluation newEvaluation = labelEvaluator.evaluate(newModel,splitter.getTest());
+
+        Assertions.assertEquals(oldEvaluation.asMap(), newEvaluation.asMap());
+
+        System.out.println(ReproUtil.diffProvenance(oldModel.getProvenance(), newModel.getProvenance()));
+
+        Assertions.assertEquals(((LibLinearModel)oldModel).getTopFeatures(-1), ((LibLinearModel)oldModel).getTopFeatures(-1));
+
     }
 }
