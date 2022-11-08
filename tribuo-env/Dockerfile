@@ -1,24 +1,31 @@
-FROM centos:8
+FROM dokken/centos-8
 
 # Necessary for using conda
 ENV PATH="/usr/local/bin/conda/bin:${PATH}"
 ARG PATH="/usr/local/bin/conda/bin:${PATH}"
 
 # Install necessary dependencies 
-RUN yum install -y wget git unzip libgomp maven 
+RUN yum install -y wget git unzip libgomp 
+
+RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip \
+	&& unzip apache-maven-3.8.6-bin.zip \
+	&& rm apache-maven-3.8.6-bin.zip
+
+ENV PATH="/apache-maven-3.8.6/bin:${PATH}"
+ 
 
 # Install OpenJDK 16
-RUN wget https://download.java.net/java/GA/jdk16.0.2/d4a915d82b4c4fbb9bde534da945d746/7/GPL/openjdk-16.0.2_linux-x64_bin.tar.gz \
-    && tar xvf openjdk-16*_bin.tar.gz \
-    && mv jdk-16.0.2 /opt/ \
-    && rm openjdk-16*_bin.tar.gz 
+RUN wget https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz \
+    && tar xvf openjdk-17*_bin.tar.gz \
+    && mv jdk-17.0.2 /opt/ \
+    && rm openjdk-17*_bin.tar.gz 
    
 # Ensure System and Maven use Java 16
-ENV JAVA_VER 16.0.2
-ENV JAVA_HOME /opt/jdk-16.0.2
+ENV JAVA_VER 17.0.2
+ENV JAVA_HOME /opt/jdk-17.0.2
 ENV PATH $PATH:$JAVA_HOME/bin
-RUN update-alternatives --install /usr/bin/java java /opt/jdk-16.0.2/bin/java 1 \ 
-    && update-alternatives --set java /opt/jdk-16.0.2/bin/java
+RUN update-alternatives --install /usr/bin/java java /opt/jdk-17.0.2/bin/java 1 \ 
+    && update-alternatives --set java /opt/jdk-17.0.2/bin/java
 
 # Install conda, which is used to install jupyterlab the notebook environment used by tribuo tutorials
 RUN wget \
@@ -43,15 +50,13 @@ RUN useradd -ms /bin/bash jupyter
 WORKDIR /home/jupyter
 
 # Install OLCUT 
-RUN git clone https://github.com/oracle/olcut.git \
-	&& cd olcut \
-	&& mvn clean install 
+#RUN git clone https://github.com/oracle/olcut.git \
+#	&& cd olcut \
+#	&& mvn -X clean install \
 
 # Install and patch tribuo
-RUN git clone https://github.com/jwons/tribuo.git \
+RUN git clone https://github.com/oracle/tribuo.git \
 	&& cd tribuo \ 
-	&& git checkout fm \
-	&& mvn clean install \
-
+	&& mvn clean install
+	
 # adding eval scripts goes in the next stage
-
