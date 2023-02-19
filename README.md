@@ -1,7 +1,10 @@
-# Reproducibility Artifacts for Integrated Reproducibility with Self-describing Machine Learning Models
+# Reproducibility Artifacts for "Integrated Reproducibility with Self-describing Machine Learning Models"
 
-Our evaluation uses Docker and consists of three Jupyter notebooks that each train and then reproduce a different set of models. In total, they will reproduce 48 models, and save the results to a csv file.
-Our results are stored in the top-level directory titled `author-results`, with the models we trained stored in the top-level directory `author-models`.
+The paper presents MERIT, a reproducibility system fully integrated into the Tribuo ML library. To use the most up-to-date version of MERIT yourself, you can add Tribuo to your Java projects using Maven, Gradle, or from source - [installation and documentation can be found here](https://tribuo.org). Otherwise, this document explains how to execute our evaluation with the version of MERIT we used. 
+
+Our evaluation uses Docker and consists of three Jupyter notebooks that each train and then reproduce a different set of models. In total, they will train and then reproduce 48 models, and save the results to a csv file.
+
+The results from when we originally ran this evaluation are stored in the top-level directory titled `author-results`, with the models we trained stored in the top-level directory `author-models`.
 
 ## Estimated Time
 ~ 10 minutes, dependent on internet and processing speed.
@@ -10,7 +13,7 @@ We reproduced this work using the following instructions on a fresh machine in ~
 
 # Reproducing the results
 
-The simplest way to reproduce the results is to pull the pre-built Docker image from Docker hub. This image almost 4GB so might take a few minutes to download. Using a computer with Docker installed, open a command-line prompt and run the following command. 
+The simplest way to reproduce the results is to pull the pre-built Docker image from Docker Hub. This image is almost 4GB so it might take a few minutes to download. To pull the image: use a computer [with Docker installed](https://docs.docker.com/get-docker/), open a command-line prompt and run the following command. 
 ```
 docker pull jwonsil/merit-artifact
 ```
