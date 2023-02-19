@@ -1,6 +1,12 @@
 # Reproducibility Artifacts for Integrated Reproducibility with Self-describing Machine Learning Models
 
-Our evaluation uses Docker and consists of three Jupyter notebooks that each train and then reproduce a different set of models. In total, they will reproduce 42 models, and save the results to a csv file. 
+Our evaluation uses Docker and consists of three Jupyter notebooks that each train and then reproduce a different set of models. In total, they will reproduce 48 models, and save the results to a csv file.
+Our results are stored in the top-level directory titled `author-results`, with the models we trained stored in the top-level directory `author-models`.
+
+## Estimated Time
+~ 10 minutes, dependent on internet and processing speed.
+
+We reproduced this work using the following instructions on a fresh machine in ~10 minutes. Included within the time was downloading the image, running the experiments, and checking the results. 
 
 # Reproducing the results
 
@@ -24,13 +30,13 @@ To access the server, open this file in a browser:
 ```
 Ctrl+Click the bottom-most link that starts with `http://127.0.0.1:8888` to be taken to the Jupyter Lab instance. 
 
-Navigate to the `eval` folder and there will be 3 notebooks along with some folders. Running each notebook from top to bottom in a linear fashion will train and then reproduce all 42 models. Some of these models might take a few minutes to train and re-train. 
+Navigate to the `eval` folder and there will be 3 notebooks along with some folders. Running each notebook from top to bottom in a linear fashion will train and then reproduce all 48 models. Some of these models might take a few minutes to train and re-train. 
 
 Once all the notebooks have completed, open the `results` directory to see a csv file for each notebook. Within these files are columns named `Equivalent Evaluation` and `Model Prov Diff`. The models were all successfully reproduced if  `Equivalent Evaluation` is all true and `Model Prov Diff` only contains timestamps. 
 
 Closing the terminal with the server running, or pressing ctrl+c within in will stop the server. 
 
-## Building the Docker image (if pulling image doesn't work)
+## Building the Docker image (if pulling the image doesn't work)
 
 You should not need to build the image yourself, but in case you want to try here are the instructions. Pulling the pre-built image is likely faster, and more guaranteed to work in the off chance one of the sites hosting a dependency linked in the Dockerfiles no longer works.
 
