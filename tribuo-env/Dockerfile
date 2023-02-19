@@ -7,20 +7,20 @@ ARG PATH="/usr/local/bin/conda/bin:${PATH}"
 # Install necessary dependencies 
 RUN yum install -y wget git unzip libgomp 
 
-RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.6/binaries/apache-maven-3.8.6-bin.zip \
-	&& unzip apache-maven-3.8.6-bin.zip \
-	&& rm apache-maven-3.8.6-bin.zip
+RUN wget https://dlcdn.apache.org/maven/maven-3/3.8.7/binaries/apache-maven-3.8.7-bin.zip \
+	&& unzip apache-maven-3.8.7-bin.zip \
+	&& rm apache-maven-3.8.7-bin.zip
 
-ENV PATH="/apache-maven-3.8.6/bin:${PATH}"
+ENV PATH="/apache-maven-3.8.7/bin:${PATH}"
  
 
-# Install OpenJDK 16
+# Install OpenJDK 17
 RUN wget https://download.java.net/java/GA/jdk17.0.2/dfd4a8d0985749f896bed50d7138ee7f/8/GPL/openjdk-17.0.2_linux-x64_bin.tar.gz \
     && tar xvf openjdk-17*_bin.tar.gz \
     && mv jdk-17.0.2 /opt/ \
     && rm openjdk-17*_bin.tar.gz 
    
-# Ensure System and Maven use Java 16
+# Ensure System and Maven use Java 17
 ENV JAVA_VER 17.0.2
 ENV JAVA_HOME /opt/jdk-17.0.2
 ENV PATH $PATH:$JAVA_HOME/bin
@@ -54,9 +54,10 @@ WORKDIR /home/jupyter
 #	&& cd olcut \
 #	&& mvn -X clean install \
 
-# Install and patch tribuo
-RUN git clone https://github.com/oracle/tribuo.git \
+# Install tribuo
+RUN git clone https://github.com/jwons/tribuo.git \
 	&& cd tribuo \ 
+    && git checkout reproducibility \
 	&& mvn clean install
 	
 # adding eval scripts goes in the next stage
