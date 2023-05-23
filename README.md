@@ -12,7 +12,9 @@ The results from when we originally ran this evaluation are stored in the top-le
 3. [Estimated Time](#estimated-time)
 4. [Reproducing the results](#reproducing-the-results)
 5. [Building the Docker image (if pulling the image doesn't work)](#building-the-docker-image-if-pulling-the-image-doesnt-work)
-6. [Directory Structure](#directory-structure)
+6. [Using MERIT and Tribuo on your own](#using-merit-and-tribuo-on-your-own)
+7. [Explanation of directory structure](#directory-structure)
+
 
 ## Estimated Time
 ~ 10 minutes, dependent on internet and processing speed.
@@ -65,6 +67,9 @@ To run the image as a container:
 docker run --rm -p 8888:8888 tribuo-notebook
 ```
 Then browse to localhost:8888 in your browser. Ctrl+c in the terminal where you ran the container kills the notebook server. 
+
+# Using MERIT and Tribuo on your own
+Tribuo and MERIT can be easily included into Java projects through Maven, Gradle, or linking to prebuilt jars. Visit [tribuo.org](https://tribuo.org) to learn how. 
 
 # Directory Structure
 
