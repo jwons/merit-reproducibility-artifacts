@@ -6,6 +6,14 @@ Our evaluation uses Docker and consists of three Jupyter notebooks that each tra
 
 The results from when we originally ran this evaluation are stored in the top-level directory titled `author-results`, with the models we trained stored in the top-level directory `author-models`.
 
+## Table of Contents
+1. [Intro](#reproducibility-artifacts-for-integrated-reproducibility-with-self-describing-machine-learning-models)
+2. [Table of Contents](#table-of-contents)
+3. [Estimated Time](#estimated-time)
+4. [Reproducing the results](#reproducing-the-results)
+5. [Building the Docker image (if pulling the image doesn't work)](#building-the-docker-image-if-pulling-the-image-doesnt-work)
+6. [Directory Structure](#directory-structure)
+
 ## Estimated Time
 ~ 10 minutes, dependent on internet and processing speed.
 
@@ -57,3 +65,61 @@ To run the image as a container:
 docker run --rm -p 8888:8888 tribuo-notebook
 ```
 Then browse to localhost:8888 in your browser. Ctrl+c in the terminal where you ran the container kills the notebook server. 
+
+# Directory Structure
+
+```
+📂 Repository Root
+├── 📂author-models # All the models we trained during our evaluation
+│   ├── 📂classification 
+│   │   ├── 📜3-nn.model
+│   │   ...
+│   │   └── 📜rf.model
+│   └── 📂regression
+│       ├── 📜3-nn.model
+│       ...
+│       └── 📜rf-reg.model
+├── 📂author-results # Our results from running these experiments
+│   ├── 📜configResults.csv
+│   ├── 📜multilabelResults.csv
+│   └── 📜results.csv
+├── 📂eval # The main directory for our evaluation, contains the notebooks, data, intermediate files, and results.
+│   ├── 📂configs
+│   │   ├── 📜all-classification-config.xml
+│   │   ...
+│   │   └── 📜mnist-config.xml
+│   ├── 📂data # This is populated once the container is built
+│   ├── 📂models # Trained models are saved here
+│   ├── 📂results # The results of the experiments are saved here
+│   ├── 📜reproduce-models.ipynb # Experimental script
+│   ├── 📜reproduce-multilabel-config.ipynb # Experimental script
+│   └── 📜reproduce-from-configs.ipynb # Experimental script
+├── 📂 reproduce-serialized # This directory contains a Java program for reproducing serialized models for the cross-architecture eval in the from of a unit test. 
+│   ├── 📜pom.xml
+│   └── 📂src
+│       ├── 📂main
+│       │   └── 📂java
+│       │       └── 📜TestReproduction.java
+│       └── 📂test
+│           ├── 📂java
+│           │   └── 📜TestReproductionTest.java
+│           └── 📂resources
+│               ├── 📂data
+│               │   ├── 📜bezdekIris.data
+│               │   └── 📜winequality-red.csv
+│               └── 📂models
+│                   ├── 📂classification
+│                   │   ├── 📜3-nn.model
+│                   │   ...
+│                   │   └── 📜rf.model
+│                   └── 📂regression
+│                       ├── 📜3-nn.model
+│                       ...
+│                       └── 📜rf-reg.model
+├── 📂tribuo-env
+│   └── 📜Dockerfile # Builds an environment tribuo can run in, lengthy build time as it install many dependencies
+├── 📜Dockerfile # Copies this repo into the tribuo-env container, occurs quickly as it uses the prebuilt image.
+├── 📜LICENSE
+└── 📜README.md
+
+```
