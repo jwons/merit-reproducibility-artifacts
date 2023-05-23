@@ -6,11 +6,11 @@ RUN yum -y install bzip2
 COPY eval ./eval
 COPY author-results ./author-results
 COPY reproduce-serialized ./eval/reproduce-serialized
-COPY models ./models
+COPY author-models ./author-models
 
 RUN chown -R jupyter:jupyter eval \
 	&& chown -R jupyter:jupyter tribuo \
-	&& chown -R jupyter:jupyter models
+	&& chown -R jupyter:jupyter author-models
 
 # Download Data
 RUN cd eval/data \
