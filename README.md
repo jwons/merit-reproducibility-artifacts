@@ -9,15 +9,17 @@ The results from when we originally ran this evaluation are stored in the top-le
 ## Table of Contents
 1. [Intro](#reproducibility-artifacts-for-integrated-reproducibility-with-self-describing-machine-learning-models)
 2. [Table of Contents](#table-of-contents)
-3. [Estimated Time](#estimated-time)
+3. [Estimated Time and Resources](#estimated-time-and-resources)
 4. [Reproducing the results](#reproducing-the-results)
 5. [Building the Docker image (if pulling the image doesn't work)](#building-the-docker-image-if-pulling-the-image-doesnt-work)
 6. [Using MERIT and Tribuo on your own](#using-merit-and-tribuo-on-your-own)
 7. [Explanation of directory structure](#directory-structure)
 
 
-## Estimated Time
-~ 10 minutes, dependent on internet and processing speed.
+## Estimated Time and Resources
+
+These instructions have been tested on a machine with 32GB RAM and an Intel Xeon E-2276M CPU @ 2.80GHz
+At a minimum, you need to be able to provide the JVM with ~4GB of heap space. 
 
 We reproduced this work using the following instructions on a fresh machine in ~10 minutes. Included within the time was downloading the image, running the experiments, and checking the results. 
 
