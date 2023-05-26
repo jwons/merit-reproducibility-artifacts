@@ -101,6 +101,9 @@ Tribuo and MERIT can be easily included into Java projects through Maven, Gradle
 │   ├── 📜reproduce-models.ipynb # Experimental script
 │   ├── 📜reproduce-multilabel-config.ipynb # Experimental script
 │   └── 📜reproduce-from-configs.ipynb # Experimental script
+├── 📂example-provenance # Contains example provenance objects that are too big to put in the paper. Each one is about ~2000 lines of "pretty printed" provenance 
+│   ├── 📜ExtraTreesModelProvenance.txt
+│   └── 📜RandomForestModelProvenance.txt
 ├── 📂 reproduce-serialized # This directory contains a Java program for reproducing serialized models for the cross-architecture eval in the from of a unit test. 
 │   ├── 📜pom.xml
 │   └── 📂src
