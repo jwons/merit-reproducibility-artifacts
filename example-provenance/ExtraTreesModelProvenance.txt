@@ -1,0 +1,1990 @@
+WeightedEnsembleModel(
+	class-name = org.tribuo.ensemble.WeightedEnsembleModel
+	dataset = MutableDataset(
+			class-name = org.tribuo.MutableDataset
+			datasource = TrainTestSplitter(
+					class-name = org.tribuo.evaluation.TrainTestSplitter
+					source = CSVDataSource(
+							class-name = org.tribuo.data.csv.CSVDataSource
+							headers = List[]
+							rowProcessor = RowProcessor(
+									class-name = org.tribuo.data.columnar.RowProcessor
+									metadataExtractors = List[]
+									fieldProcessorList = List[
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = chlorides
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = alcohol
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = density
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = free sulfur dioxide
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = fixed acidity
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = citric acid
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = pH
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = total sulfur dioxide
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = volatile acidity
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = residual sugar
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+										DoubleFieldProcessor(
+													class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+													fieldName = sulphates
+													onlyFieldName = true
+													throwOnInvalid = true
+													host-short-name = FieldProcessor
+												)
+									]
+									featureProcessors = List[]
+									responseProcessor = FieldResponseProcessor(
+											class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+											uppercase = false
+											fieldNames = List[
+												quality
+											]
+											defaultValues = List[
+												
+											]
+											displayField = false
+											outputFactory = RegressionFactory(
+													class-name = org.tribuo.regression.RegressionFactory
+													splitChar = ,
+												)
+											host-short-name = ResponseProcessor
+										)
+									weightExtractor = FieldExtractor(
+											class-name = org.tribuo.data.columnar.FieldExtractor
+										)
+									replaceNewlinesWithSpaces = true
+									regexMappingProcessors = Map{}
+									host-short-name = RowProcessor
+								)
+							quote = "
+							outputRequired = true
+							outputFactory = RegressionFactory(
+									class-name = org.tribuo.regression.RegressionFactory
+									splitChar = ,
+								)
+							separator = ;
+							dataPath = /home/jupyter/eval/data/winequality-red.csv
+							resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+							file-modified-time = 2009-10-16T21:36:50Z
+							datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+							host-short-name = DataSource
+						)
+					train-proportion = 0.699999988079071
+					seed = 0
+					size = 1599
+					is-train = true
+				)
+			transformations = List[]
+			is-sequence = false
+			is-dense = true
+			num-examples = 1119
+			num-features = 11
+			num-outputs = 1
+			tribuo-version = 4.2.0-SNAPSHOT
+		)
+	trainer = ExtraTreesTrainer(
+			class-name = org.tribuo.common.tree.ExtraTreesTrainer
+			seed = 12345
+			innerTrainer = CARTRegressionTrainer(
+					class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+					maxDepth = 8
+					impurity = MeanSquaredError(
+							class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+							host-short-name = RegressorImpurity
+						)
+					useRandomSplitPoints = true
+					minImpurityDecrease = 0.0
+					seed = 12345
+					fractionFeaturesInSplit = 1.0
+					minChildWeight = 5.0
+					tribuo-version = 4.2.0-SNAPSHOT
+					train-invocation-count = 11
+					is-sequence = false
+					host-short-name = Trainer
+				)
+			combiner = AveragingCombiner(
+					class-name = org.tribuo.regression.ensemble.AveragingCombiner
+					host-short-name = EnsembleCombiner
+				)
+			numMembers = 10
+			tribuo-version = 4.2.0-SNAPSHOT
+			train-invocation-count = 1
+			is-sequence = false
+			host-short-name = Trainer
+		)
+	trained-at = 2023-05-26T14:13:53.314601932Z
+	instance-values = Map{}
+	tribuo-version = 4.2.0-SNAPSHOT
+	java-version = 17.0.7
+	os-name = Linux
+	os-arch = amd64
+	member-provenance = List[
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = 1544317319
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 11
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.186887837Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = 1234756820
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 12
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.199561215Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = -685981534
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 13
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.208427390Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = 1536263611
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 14
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.215749869Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = -2240510
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 15
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.222714331Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = -729400394
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 16
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.244322548Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = -107951028
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 17
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.270785080Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = 478243751
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 18
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.298098630Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = 1579778379
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 19
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.307333053Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+		TreeModel(
+					class-name = org.tribuo.common.tree.TreeModel
+					dataset = DatasetView(
+							class-name = org.tribuo.dataset.DatasetView
+							datasource = MutableDataset(
+									class-name = org.tribuo.MutableDataset
+									datasource = TrainTestSplitter(
+											class-name = org.tribuo.evaluation.TrainTestSplitter
+											source = CSVDataSource(
+													class-name = org.tribuo.data.csv.CSVDataSource
+													headers = List[]
+													rowProcessor = RowProcessor(
+															class-name = org.tribuo.data.columnar.RowProcessor
+															metadataExtractors = List[]
+															fieldProcessorList = List[
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = chlorides
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = alcohol
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = density
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = free sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = fixed acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = citric acid
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = pH
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = total sulfur dioxide
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = volatile acidity
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = residual sugar
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+																DoubleFieldProcessor(
+																			class-name = org.tribuo.data.columnar.processors.field.DoubleFieldProcessor
+																			fieldName = sulphates
+																			onlyFieldName = true
+																			throwOnInvalid = true
+																			host-short-name = FieldProcessor
+																		)
+															]
+															featureProcessors = List[]
+															responseProcessor = FieldResponseProcessor(
+																	class-name = org.tribuo.data.columnar.processors.response.FieldResponseProcessor
+																	uppercase = false
+																	fieldNames = List[
+																		quality
+																	]
+																	defaultValues = List[
+																		
+																	]
+																	displayField = false
+																	outputFactory = RegressionFactory(
+																			class-name = org.tribuo.regression.RegressionFactory
+																			splitChar = ,
+																		)
+																	host-short-name = ResponseProcessor
+																)
+															weightExtractor = FieldExtractor(
+																	class-name = org.tribuo.data.columnar.FieldExtractor
+																)
+															replaceNewlinesWithSpaces = true
+															regexMappingProcessors = Map{}
+															host-short-name = RowProcessor
+														)
+													quote = "
+													outputRequired = true
+													outputFactory = RegressionFactory(
+															class-name = org.tribuo.regression.RegressionFactory
+															splitChar = ,
+														)
+													separator = ;
+													dataPath = /home/jupyter/eval/data/winequality-red.csv
+													resource-hash = 4A402CF041B025D4566D954C3B9BA8635A3A8A01E039005D97D6A710278CF05E
+													file-modified-time = 2009-10-16T21:36:50Z
+													datasource-creation-time = 2023-05-26T14:05:40.191880347Z
+													host-short-name = DataSource
+												)
+											train-proportion = 0.699999988079071
+											seed = 0
+											size = 1599
+											is-train = true
+										)
+									transformations = List[]
+									is-sequence = false
+									is-dense = true
+									num-examples = 1119
+									num-features = 11
+									num-outputs = 1
+									tribuo-version = 4.2.0-SNAPSHOT
+								)
+							transformations = List[]
+							is-sequence = false
+							is-dense = false
+							num-examples = 1119
+							num-features = 11
+							num-outputs = 1
+							tribuo-version = 4.2.0-SNAPSHOT
+							size = 1119
+							seed = -304417598
+							tag = 
+							weighted = false
+							sampled = true
+							indices = List[]
+						)
+					trainer = CARTRegressionTrainer(
+							class-name = org.tribuo.regression.rtree.CARTRegressionTrainer
+							maxDepth = 8
+							impurity = MeanSquaredError(
+									class-name = org.tribuo.regression.rtree.impurity.MeanSquaredError
+									host-short-name = RegressorImpurity
+								)
+							useRandomSplitPoints = true
+							minImpurityDecrease = 0.0
+							seed = 12345
+							fractionFeaturesInSplit = 1.0
+							minChildWeight = 5.0
+							tribuo-version = 4.2.0-SNAPSHOT
+							train-invocation-count = 20
+							is-sequence = false
+							host-short-name = Trainer
+						)
+					trained-at = 2023-05-26T14:13:53.314488977Z
+					instance-values = Map{}
+					tribuo-version = 4.2.0-SNAPSHOT
+					java-version = 17.0.7
+					os-name = Linux
+					os-arch = amd64
+				)
+	]
+)
