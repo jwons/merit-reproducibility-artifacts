@@ -27,13 +27,13 @@ We reproduced this work using the following instructions on a fresh machine in ~
 
 The simplest way to reproduce the results is to pull the pre-built Docker image from Docker Hub. This image is almost 4GB so it might take a few minutes to download. To pull the image: use a computer [with Docker installed](https://docs.docker.com/get-docker/), open a command-line prompt and run the following command. 
 ```
-docker pull jwonsil/merit-artifact
+docker pull jwonsil/merit-reproducibilty-artifact
 ```
 (If you'd rather build the image yourself, check the next section.)
 
 Once you have pulled this image, start the local Jupyter Lab server using the following command.
 ```
-docker run --rm -p 8888:8888 jwonsil/merit-artifact
+docker run --rm -p 8888:8888 jwonsil/merit-reproducibilty-artifact
 ```
 It will take a few seconds to start up, once it has there will be instructions on how to access it. 
 ```
