@@ -25,7 +25,11 @@ RUN cd eval/data \
 	&& wget http://qwone.com/~jason/20Newsgroups/20news-bydate.tar.gz \
 	&& mkdir 20news \
 	&& cd 20news \
-	&& tar -zxf ../20news-bydate.tar.gz 	
+	&& tar -zxf ../20news-bydate.tar.gz 
+
+# Copy data to necessary location
+RUN cp eval/data/winequality-red.csv eval/reproduce-serialized/src/test/resources/data/ \
+	&& cp eval/data/bezdekIris.data eval/reproduce-serialized/src/test/resources/data/ 
 
 RUN cd tribuo/tutorials \
 	&& wget https://repo1.maven.org/maven2/com/fasterxml/jackson/datatype/jackson-datatype-jsr310/2.14.0/jackson-datatype-jsr310-2.14.0.jar
