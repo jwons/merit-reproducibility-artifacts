@@ -1,5 +1,7 @@
 # Reproducibility Artifacts for "Integrated Reproducibility with Self-describing Machine Learning Models"
 
+[![DOI](https://zenodo.org/badge/412213103.svg)](https://zenodo.org/badge/latestdoi/412213103)
+
 The paper presents MERIT, a reproducibility system fully integrated into the Tribuo ML library. To use the most up-to-date version of MERIT yourself, you can add Tribuo to your Java projects using Maven, Gradle, or from source - [installation and documentation can be found here](https://tribuo.org). Otherwise, this document explains how to execute our evaluation with the version of MERIT we used. 
 
 Our evaluation uses Docker and consists of three Jupyter notebooks that each train and then reproduce a different set of models. In total, they will train and then reproduce 48 models, and save the results to a csv file.
